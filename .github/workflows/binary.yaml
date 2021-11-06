@@ -39,7 +39,7 @@ jobs:
         run: choco install -y visualstudio2019-workload-nativedesktop llvm protoc
       - name: Show Clang on Windows
         if: ${{ matrix.os == 'windows-latest' }}
-        run: dir C:\\msys64\\mingw64\\bin
+        run: setx RUST_BACKTRACE 1 # dir C:\\msys64\\mingw64\\bin
       - name: yarn info
         run: yarn install
       - name: Build
